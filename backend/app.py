@@ -43,13 +43,10 @@ app = Flask(__name__)
 
 CORS(
     app,
-    resources={
-        r"/*": {
-            "origins": "*"
-        }
-    }
+    origins=[
+        "https://diabeta-ai.netlify.app"
+    ]
 )
-
 
 @app.after_request
 def add_cors_headers(response):
