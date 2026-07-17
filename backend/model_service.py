@@ -203,7 +203,7 @@ def generate_shap_interpretation(shap_values, probability, risk_category):
 
 
 
-    # Menentukan arah kontribusi
+    # Menentukan arah pengaruh fitur dalam perhitungan model
 
     contributions = []
 
@@ -218,13 +218,13 @@ def generate_shap_interpretation(shap_values, probability, risk_category):
         if value > 0:
 
             direction = (
-                "meningkatkan kontribusi risiko"
+                "cenderung menaikkan estimasi risiko menurut model"
             )
 
         else:
 
             direction = (
-                "menurunkan kontribusi risiko"
+                "cenderung menurunkan estimasi risiko menurut model"
             )
 
 
@@ -236,21 +236,18 @@ def generate_shap_interpretation(shap_values, probability, risk_category):
 
     narrative = (
 
-        f"Berdasarkan hasil skrining, "
-        f"faktor yang paling berpengaruh terhadap "
-        f"hasil analisis adalah {first_factor}, "
-        f"kemudian {second_factor}, dan "
-        f"{third_factor}. "
+        f"Hasil skrining menunjukkan estimasi risiko sebesar "
+        f"{probability * 100:.1f}% "
+        f"dengan kategori {risk_category.lower()}. "
+        f"Dari data yang dimasukkan, faktor yang paling memengaruhi "
+        f"perhitungan model adalah {first_factor}, "
+        f"diikuti oleh {second_factor}, lalu {third_factor}. "
         
-        f"Pada data yang dimasukkan, "
+        f"Dalam perhitungan ini, "
         f"{contributions[0]}, "
         f"{contributions[1]}, dan "
         f"{contributions[2]}. "
-        
-        f"Kombinasi faktor tersebut menghasilkan "
-        f"estimasi risiko sebesar "
-        f"{probability * 100:.1f}% "
-        f"dengan kategori {risk_category.lower()}."
+        f"Hasil ini bersifat skrining awal dan bukan diagnosis medis."
     )
 
 

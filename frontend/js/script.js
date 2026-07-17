@@ -381,7 +381,7 @@ function updateExplanation(data){
             document.getElementById(
                 factors[feature].text
             ).textContent =
-            "Meningkatkan kontribusi risiko";
+            "Menaikkan estimasi risiko menurut model";
 
 
         }
@@ -398,7 +398,7 @@ function updateExplanation(data){
             document.getElementById(
                 factors[feature].text
             ).textContent =
-            "Menurunkan kontribusi risiko";
+            "Menurunkan estimasi risiko menurut model";
 
 
         }
