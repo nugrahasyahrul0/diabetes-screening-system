@@ -51,11 +51,12 @@ MODEL_THRESHOLD = 0.3289475
 # Semua preprocessing dijalankan oleh pipeline.
 # ====================================================
 
-BASE_DIR = Path(__file__).resolve().parent
+import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MODEL_PATH = (
-    BASE_DIR.parent
-    / "model"
-    / "diabetes_xgb_pipeline.pkl"
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "model",
+    "diabetes_xgb_pipeline.pkl"
 )
