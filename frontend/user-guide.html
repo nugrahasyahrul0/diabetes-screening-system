@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide - Diabeta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav class="nav">
+    <a href="index.html" class="brand">
+        diabeta
+    </a>
+  </nav>
+
+  <!-- Konten Utama -->
+  <main class="guide-container">
+    <div class="guide-header">
+      <div class="guide-icon">
+       
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16">
+            <path d="M0 0h16v16H0z" fill="none" />
+            <path fill="currentColor" d="M8 1v3.5A1.5 1.5 0 0 0 9.5 6H13v7.5a1.5 1.5 0 0 1-1.5 1.5h-.585a1.5 1.5 0 0 0-.354-1.56l-2-2A4.5 4.5 0 0 0 3 5.256V2.5A1.5 1.5 0 0 1 4.5 1zm1 .25V4.5a.5.5 0 0 0 .5.5h3.25zM6.596 12.303a3.5 3.5 0 1 1 .707-.707l2.55 2.55a.5.5 0 0 1-.707.708zM7 9.5a2.5 2.5 0 1 0-5 0a2.5 2.5 0 0 0 5 0" />
+        </svg>
+
+      </div>
+      <h1>User Guide</h1>
+      <p>Halaman panduan penggunaan diabeta</p>
+    </div>
+
+    <!-- Akordeon FAQ -->
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Apa itu diabeta?
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	        <path d="M0 0h24v24H0z" fill="none" />
+	        <path fill="currentColor" fill-rule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z" />
+            </svg>
+        </button>
+        <div class="accordion-content">
+        <p>
+            Diabeta merupakan sistem deteksi dini risiko diabetes mellitus berbasis web yang membantu pengguna mengenali kemungkinan risiko diabetes berdasarkan informasi kesehatan dasar seperti usia, BMI, dan riwayat keluarga diabetes. Sistem menggunakan metode klasifikasi XGBoost dengan pendekatan Explainable Artificial Intelligence (XAI) untuk memberikan hasil prediksi beserta penjelasan faktor yang memengaruhi hasil analisis.
+        </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Bagaimana cara menggunakannya?
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" fill-rule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z" />
+</svg>
+
+        </button>
+        <div class="accordion-content">
+          <p>
+1. Masukkan data kesehatan yang diminta pada halaman skrining.
+<br><br>
+2. Klik tombol "Mulai Skrining" untuk mendapatkan hasil analisis.
+<br><br>
+3. Sistem akan menampilkan estimasi risiko diabetes mellitus beserta penjelasan faktor yang berkontribusi terhadap hasil tersebut.
+</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Data apa yang diperlukan?
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" fill-rule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z" />
+</svg>
+
+        </button>
+        <div class="accordion-content">
+          <p>
+Sistem membutuhkan tiga informasi kesehatan dasar:
+<br><br>
+• Usia pengguna.
+<br>
+• Nilai Body Mass Index (BMI).
+<br>
+• Riwayat keluarga dengan diabetes mellitus.
+<br><br>
+Data tersebut digunakan sebagai masukan untuk model prediksi risiko.
+</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Bagaimana membaca hasil?
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" fill-rule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z" />
+</svg>
+
+        </button>
+        <div class="accordion-content">
+          <p>
+Hasil skrining menampilkan estimasi risiko berdasarkan analisis model. Selain kategori risiko dan probabilitas, sistem menyediakan penjelasan faktor risiko menggunakan pendekatan Explainable Artificial Intelligence (XAI).
+<br><br>
+Visualisasi faktor menunjukkan kontribusi setiap faktor terhadap hasil analisis:
+<br><br>
+↑ menunjukkan faktor yang meningkatkan kontribusi risiko.
+<br>
+↓ menunjukkan faktor yang menurunkan kontribusi risiko.
+<br><br>
+Interpretasi tersebut digunakan untuk membantu pengguna memahami alasan di balik hasil prediksi.
+</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          Disclaimer
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" fill-rule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z" />
+</svg>
+
+        </button>
+        <div class="accordion-content">
+          <p>
+Diabeta hanya digunakan sebagai media skrining awal dan tidak menggantikan diagnosis, pemeriksaan, maupun konsultasi dengan dokter atau tenaga kesehatan.
+<br><br>
+Hasil yang diberikan sistem bersifat informasi awal berdasarkan data yang dimasukkan oleh pengguna.
+</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/accordion.js"></script>
+</body>
+</html>

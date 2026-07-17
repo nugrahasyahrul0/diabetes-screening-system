@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diabeta - Skrining Diabetes</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="nav">
+
+    <div class="logo">
+        diabeta
+    </div>
+
+    <a href="user-guide.html" class="nav-btn">
+        Panduan Penggunaan
+    </a>
+
+</header>
+
+
+
+<main class="screening-layout">
+
+
+<!-- LEFT COLUMN -->
+
+<section class="left-column">
+
+
+<div class="form-card">
+
+
+<h1>
+Skrining Risiko Diabetes Mellitus
+</h1>
+
+
+<p>
+Silakan isi data berikut untuk melakukan skrining awal risiko diabetes mellitus.
+</p>
+
+
+
+<form id="screening-form">
+
+
+<label>
+Usia
+</label>
+
+
+<input 
+type="number"
+id="age"
+min="1"
+max="120"
+placeholder="Misal 56"
+step="1"
+required
+>
+
+
+
+<label>
+BMI
+</label>
+
+
+<input 
+type="number"
+step="0.1"
+min="1"
+max="100"
+id="bmi"
+placeholder="Misal 26.5"
+required
+>
+
+
+<small>
+    Belum mengetahui nilai BMI?
+    <a href="https://www.calculator.net/bmi-calculator.html" target="_blank">
+        Hitung BMI terlebih dahulu.
+    </a>
+</small>
+
+
+
+<label>
+Riwayat keluarga diabetes
+</label>
+
+
+<select id="family-history">
+
+
+<option value="">
+Pilih
+</option>
+
+
+<option value="1">
+Ya
+</option>
+
+
+<option value="0">
+Tidak
+</option>
+
+
+</select>
+
+
+
+<button 
+id="predict-button"
+class="primary-btn-scrn"
+type="submit">
+
+Mulai Skrining
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<div class="disclaimer">
+
+
+<h2>
+Disclaimer
+</h2>
+
+
+<p>
+
+Sistem ini tidak menggantikan peran dokter
+atau tenaga medis. Hasil yang ditampilkan
+bersifat skrining awal.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- RIGHT COLUMN -->
+
+
+<section class="right-column">
+
+
+
+<div class="result-card">
+
+
+<h2>
+Hasil Analisis
+</h2>
+
+
+<div class="result-content">
+
+
+<h3>
+Kategori Risiko
+</h3>
+
+
+<p id="risk-category">
+Belum ada hasil analisis
+</p>
+
+
+
+<h3>
+Probabilitas Risiko
+</h3>
+
+
+<strong id="risk-probability">
+-
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+Rekomendasi
+</h2>
+
+
+<p id="recommendation">
+
+Rekomendasi muncul ketika proses skrining sudah dilakukan.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+Penjelasan Faktor Risiko
+</h2>
+
+
+<div class="factor">
+
+
+<h3>
+BMI
+</h3>
+
+
+<div class="shap-row">
+
+<div class="bar-background">
+
+<div 
+class="bar"
+id="bmi-bar">
+</div>
+
+</div>
+
+
+<span 
+id="bmi-direction">
+
+-
+
+</span>
+
+
+</div>
+
+
+<p id="bmi-text">
+Menunggu analisis
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="factor">
+
+
+<h3>
+Usia
+</h3>
+
+
+<div class="shap-row">
+
+<div class="bar-background">
+
+<div 
+class="bar"
+id="age-bar">
+</div>
+
+</div>
+
+
+<span 
+id="age-direction">
+
+-
+
+</span>
+
+
+</div>
+
+
+<p id="age-text">
+Menunggu analisis
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="factor">
+
+
+<h3>
+Riwayat Keluarga
+</h3>
+
+
+<div class="shap-row">
+
+
+<div class="bar-background">
+
+
+<div 
+class="bar"
+id="family-bar">
+
+</div>
+
+
+</div>
+
+
+<span 
+id="family-direction">
+
+-
+
+</span>
+
+
+</div>
+
+
+<p id="family-text">
+Menunggu analisis
+</p>
+
+
+</div>
+
+
+
+
+
+<p id="shap-narrative">
+
+Menunggu hasil analisis faktor risiko.
+
+</p>
+
+
+</div>
+
+<button 
+    class="primary-btn"
+    onclick="resetScreening()">
+    Skrining Ulang
+</button>
+
+</section>
+
+
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+# ====================================================
+# Backend Dependency
+# Sistem Deteksi Dini Risiko Diabetes Mellitus
+#
+# Deskripsi:
+# File ini menyimpan seluruh library Python yang
+# digunakan untuk menjalankan backend API dan
+# integrasi model machine learning.
+#
+# Catatan Maintenance:
+# - Jangan menambahkan library tanpa kebutuhan teknis.
+# - Library machine learning digunakan untuk menjalankan
+#   pipeline model penelitian.
+# - Library web digunakan untuk komunikasi frontend
+#   dan backend.
+# ====================================================
+
+Flask==3.1.3
+flask-cors==6.0.1
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+xgboost==1.7.6
+joblib==1.5.3
+shap==0.49.1
