@@ -40,19 +40,17 @@ from config import MODEL_THRESHOLD
 # ====================================================
 
 app = Flask(__name__)
-CORS(app)
-
-
-
-# Development frontend
 
 CORS(
     app,
-    resources={
-        r"/*":{
-            "origins":"https://diabeta-ai.netlify.app"
-        }
-    }
+    origins=[
+        "https://diabeta-ai.netlify.app"
+    ],
+    methods=[
+        "GET",
+        "POST",
+        "OPTIONS"
+    ]
 )
 
 
