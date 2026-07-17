@@ -41,9 +41,15 @@ xgb_model = model_pipeline.named_steps["model"]
 
 # Membuat SHAP explainer
 
-explainer = shap.TreeExplainer(
-    xgb_model
-)
+eexplainer = None
+
+def get_explainer():
+    global explainer
+
+    if explainer is None:
+        explainer = shap.TreeExplainer(xgb_model)
+
+    return explainer
 
 
 
@@ -126,9 +132,7 @@ def explain_risk(
     )
 
 
-    shap_values = explainer.shap_values(
-        transformed_data
-    )
+    shap_values = get_explainer().shap_values(transformed_data)
 
 
     values = shap_values[0]
