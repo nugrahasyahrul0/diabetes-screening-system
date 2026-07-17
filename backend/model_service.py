@@ -49,30 +49,6 @@ def get_explainer():
 
     return explainer
 
-
-
-# Ambil model XGBoost dari pipeline
-# Pipeline:
-# scaler -> model
-
-xgb_model = model_pipeline.named_steps["model"]
-
-
-
-# Membuat SHAP explainer
-
-explainer = None
-
-def get_explainer():
-    global explainer
-
-    if explainer is None:
-        explainer = shap.TreeExplainer(xgb_model)
-
-    return explainer
-
-
-
 # ====================================================
 # Membuat input dataframe
 # ====================================================
