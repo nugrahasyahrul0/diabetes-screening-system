@@ -40,6 +40,7 @@ from config import MODEL_THRESHOLD
 # ====================================================
 
 app = Flask(__name__)
+CORS(app)
 
 
 
