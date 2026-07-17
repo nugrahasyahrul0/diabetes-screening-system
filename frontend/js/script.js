@@ -156,7 +156,7 @@ try{
 
 const response =
 await fetch(
-"https://nugrahasyahrul.pythonanywhere.com/predict",
+"https://diabetes-screening-system-production.up.railway.app/predict",
 {
 
 method:"POST",
@@ -231,7 +231,7 @@ result.recommendation;
 
 const shapResponse =
 await fetch(
-"https://nugrahasyahrul.pythonanywhere.com/explain",
+"https://diabetes-screening-system-production.up.railway.app/explain",
 {
 
 method:"POST",
