@@ -27,7 +27,27 @@ from config import MODEL_PATH
 # Load Pipeline Model
 # ====================================================
 
-model_pipeline = joblib.load(MODEL_PATH)
+model_pipeline = None
+xgb_model = None
+explainer = None
+
+def get_model_pipeline():
+    global model_pipeline, xgb_model
+
+    if model_pipeline is None:
+        model_pipeline = joblib.load(MODEL_PATH)
+        xgb_model = model_pipeline.named_steps["model"]
+
+    return model_pipeline
+
+def get_explainer():
+    global explainer
+
+    if explainer is None:
+        get_model_pipeline()
+        explainer = shap.TreeExplainer(xgb_model)
+
+    return explainer
 
 
 
@@ -41,7 +61,7 @@ xgb_model = model_pipeline.named_steps["model"]
 
 # Membuat SHAP explainer
 
-eexplainer = None
+explainer = None
 
 def get_explainer():
     global explainer
@@ -84,23 +104,14 @@ def create_input(
 # Prediksi Risiko
 # ====================================================
 
-def predict_risk(
-    age,
-    bmi,
-    family_history
-):
+def predict_risk(age, bmi, family_history):
+    input_data = create_input(age, bmi, family_history)
 
-    input_data = create_input(
-        age,
-        bmi,
-        family_history
-    )
+    pipeline = get_model_pipeline()
 
-
-    probability = model_pipeline.predict_proba(
+    probability = pipeline.predict_proba(
         input_data
     )[0][1]
-
 
     return probability
 
@@ -125,8 +136,10 @@ def explain_risk(
 
 
     # preprocessing sesuai pipeline
+    pipeline = get_model_pipeline()
+
     transformed_data = (
-        model_pipeline
+        pipeline
         .named_steps["scaler"]
         .transform(input_data)
     )
