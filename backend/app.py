@@ -24,13 +24,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 
-from model_service import (
-    predict_risk,
-    explain_risk,
-    generate_shap_interpretation
-)
-
-
 from config import MODEL_THRESHOLD
 
 
@@ -57,6 +50,18 @@ CORS(
 # ====================================================
 
 @app.route(
+    "/health",
+    methods=["GET"]
+)
+def health():
+    return jsonify(
+        {
+            "status": "ok"
+        }
+    )
+
+
+@app.route(
     "/predict",
     methods=["POST"]
 )
@@ -78,6 +83,8 @@ def predict():
 
 
     try:
+
+        from model_service import predict_risk
 
         age = data["age"]
 
@@ -170,6 +177,12 @@ def explain():
         ),400
 
     try:
+
+        from model_service import (
+            predict_risk,
+            explain_risk,
+            generate_shap_interpretation
+        )
 
         age = data["age"]
         bmi = data["bmi"]
