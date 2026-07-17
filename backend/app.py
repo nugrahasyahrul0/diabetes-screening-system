@@ -43,17 +43,16 @@ app = Flask(__name__)
 
 CORS(
     app,
-    origins=[
-        "https://diabeta-ai.netlify.app"
-    ],
-    methods=[
-        "GET",
-        "POST",
-        "OPTIONS"
-    ]
+    resources={
+        r"/*": {
+            "origins": "*"
+        }
+    }
 )
 
-
+@app.route("/predict", methods=["OPTIONS"])
+def predict_options():
+    return jsonify({"status": "ok"}), 200
 
 # ====================================================
 # Endpoint Prediction
