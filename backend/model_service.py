@@ -239,14 +239,20 @@ def generate_shap_interpretation(shap_values, probability, risk_category):
         f"Hasil skrining menunjukkan estimasi risiko sebesar "
         f"{probability * 100:.1f}% "
         f"dengan kategori {risk_category.lower()}. "
-        f"Dari data yang dimasukkan, faktor yang paling memengaruhi "
-        f"perhitungan model adalah {first_factor}, "
-        f"diikuti oleh {second_factor}, lalu {third_factor}. "
-        
-        f"Dalam perhitungan ini, "
+
+        f"Berdasarkan data yang dimasukkan, "
+        f"faktor yang memiliki kontribusi terbesar terhadap hasil estimasi model adalah "
+        f"{first_factor}, diikuti oleh {second_factor}, dan {third_factor}. "
+
+        f"Menurut interpretasi model, "
         f"{contributions[0]}, "
         f"{contributions[1]}, dan "
         f"{contributions[2]}. "
+
+        f"Interpretasi faktor risiko menunjukkan kontribusi masing-masing variabel "
+        f"terhadap hasil prediksi berdasarkan pola yang dipelajari model, "
+        f"bukan menunjukkan hubungan sebab-akibat secara langsung. "
+
         f"Hasil ini bersifat skrining awal dan bukan diagnosis medis."
     )
 

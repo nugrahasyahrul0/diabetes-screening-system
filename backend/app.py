@@ -111,8 +111,8 @@ def predict():
 
 
             recommendation = (
-                "Disarankan melakukan pemeriksaan "
-                "kesehatan lanjutan ke tenaga kesehatan."
+                "Berdasarkan hasil skrining, terdapat indikasi estimasi risiko diabetes mellitus yang lebih tinggi menurut model. Disarankan untuk melakukan pemeriksaan lebih lanjut kepada tenaga kesehatan untuk memperoleh evaluasi kondisi kesehatan yang lebih lengkap. "
+                "Menjaga pola makan seimbang, aktivitas fisik rutin, dan berat badan sehat juga dapat membantu mengurangi faktor risiko diabetes mellitus."
             )
 
 
@@ -125,8 +125,8 @@ def predict():
 
 
             recommendation = (
-                "Tetap menjaga pola hidup sehat "
-                "dan melakukan pemeriksaan berkala."
+                "Berdasarkan hasil skrining, estimasi risiko diabetes mellitus berada pada kategori lebih rendah. "
+                "Tetap pertahankan pola hidup sehat melalui aktivitas fisik rutin, pola makan seimbang, menjaga berat badan sehat, dan melakukan pemeriksaan kesehatan secara berkala sesuai kebutuhan."
             )
 
 
